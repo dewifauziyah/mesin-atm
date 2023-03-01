@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PIN</title>
+</head>
+<body class="bg-[#324154] flex h-screen justify-center items-center p-[50px] text-center px-[50px]">
+    <div class="bg-[#597298] flex justify-between items-center w-[1000px] h-[550px] rounded-md ">
+      <div class="text text-white text-center text-3xl ml-[100px] space-y-8 font-semibold">
+        <h1>SILAHKAN MASUKAN PIN ANDA</h1>
+        <div class="input cursor-pointer">
+          <input type="password" id="pin" class="h-[40px] rounded-md w-[170px] text-black text-center">
+          <span id="submit" onclick="klik()" class="text-green-400 ml-[10px]">ENTER >></span>
+          <a href="../pages/ambilKartu.html">
+            <button class="text-red-400">CANCEL >></button>
+          </a>
+        </div>
+        <h1>TEKAN "CANCEL" UNTUK MEMBATALKAN</h1>
+      </div>
+      <img src="../images/masukan-pin.jpg" class="w-[400px] h-[500px] mt-[50px]">
+    </div>
+    <script>
+       const pin = document.getElementById("pin")
+       const submit = document.getElementById ("submit")
+
+       submit.addEventListener("click",()=>{
+        if (pin.value.length > 0) {
+          if (pin.value == 123456) {
+            location.href = "nominal.html"
+          } else {
+            alert('Pin Anda Salah')
+          }
+        } else {
+          alert('Pin Tidak Boleh Kosong')
+        }
+       })
+    </script>
+</body>
+</html>
